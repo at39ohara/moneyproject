@@ -1,0 +1,22 @@
+/* static/css/style.css */
+
+body {
+  background-color: #f0f0f5; /* 青みがかった薄いグレー */
+  margin: 0;
+  padding: 0;
+}
+
+header {
+  background-color: #803636; /* ヘッダーの背景色 */
+  color: white; /* ヘッダーのテキスト色 */
+  padding: 10px; /* ヘッダーの内側の余白 */
+}
+
+header h1 {
+  margin: 0; /* タイトルのマージンをリセットして左寄せに */
+}
+
+/* ハンバーガーメニューを右寄せにする例 */
+.navbar-toggler {
+  margin-left: auto;
+}

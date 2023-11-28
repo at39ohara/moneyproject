@@ -1,0 +1,55 @@
+<!-- base.htmlのひな型を使用するために引っ張ってくる -->
+{% extends 'base.html' %}
+
+{% load static %}
+
+<!-- タイトルのところにContactと表示する -->
+{% block title %}Contact{% endblock %}
+
+<!-- コンタクトぺーじのためのコンテンツをぶっこむためのもの -->
+<!-- 教科書の引用 -->
+{% block contents %}
+<main class="mb-4">
+    <div class="container px-4 px-lg-5">
+        <div class="row gx-4 gx-lg-5 justify-content-center">
+            <div class="col-md-10 col-lg-8 col-xl-7">
+                <strong>Want to get in touch? Fill out the form below to send us a message.</strong>
+                {% if messages %}
+                <ul class = 'list-unstyled' style = 'list-style: none;'>
+                    {% for message in messages %}
+                    <li {%if message.tags %} class ='{{ message.tags }}' {% endif %}>
+                        {{ message }}
+                    </li>
+                    {% endfor %}
+                </ul>
+                {% endif %}
+
+                <div class="my-5">
+                    <!-- * * * * * * * * * * * * * * *-->
+                    <!-- * * SB Forms Contact Form * *-->
+                    <!-- * * * * * * * * * * * * * * *-->
+                    <!-- This form is pre-integrated with SB Forms.-->
+                    <!-- To make this form functional, sign up at-->
+                    <!-- https://startbootstrap.com/solution/contact-forms-->
+                    <!-- to get an API token!-->
+                    <form method = 'post'>
+                        {% csrf_token %}
+                        {% for field in form %}
+                            <div class = 'form-floating'>
+                                <div class = 'form-group floating-label-form-group controls'>
+                                    {{ field.label_tag }}
+                                    {{ field }}
+                                    <p class = 'help-block text-danger'></p>
+                                </div>
+                            </div>
+                        {% endfor %}
+                        <br>
+                        <button type = 'submit' class = 'btn btn-primary' id = 'sendMessageButton'>Send</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
+<a href="{% url 'accounts:my_page' %}">Back to My Page</a>
+{% endblock %}

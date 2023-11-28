@@ -1,0 +1,14 @@
+<!-- transactions/templates/registration/login.html -->
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block contents %}
+  <h2>Login</h2>
+  <form method="post" action="{% url 'accounts:login' %}">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Login</button>
+  </form>
+  <p>Don't have an account? <a href="{% url 'accounts:signup' %}">Register</a></p>
+{% endblock %}

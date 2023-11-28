@@ -1,0 +1,15 @@
+<!-- your_app/templates/your_app/transaction_confirm_delete.html -->
+
+{% extends 'base.html' %}
+
+{% block title %}Confirm Deletion{% endblock %}
+
+{% block contents %}
+  <h2>Confirm Deletion</h2>
+  <p>Are you sure you want to delete the transaction "{{ object }}"?</p>
+  <form method="post" action="{% url 'accounts:transaction_confirm_delete' pk=object.pk %}">
+    {% csrf_token %}
+    <input type="submit" value="Confirm">
+  </form>
+  <a href="{% url 'accounts:transaction_list' %}">Cancel</a>
+{% endblock %}

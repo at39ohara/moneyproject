@@ -1,0 +1,20 @@
+<!-- moneycount/templates/registration/transaction_list.html -->
+
+{% extends 'base.html' %}
+
+{% block title %}Transaction List{% endblock %}
+
+{% block contents %}
+  <h2>Transaction List</h2>
+
+  <ul>
+    {% for transaction in transactions %}
+      <li>
+        {{ transaction.description }} - {{ transaction.amount }} - {{ transaction.date }}
+        <a href="{% url 'accounts:transaction_confirm_delete' transaction.pk %}">Delete</a>
+      </li>
+    {% endfor %}
+  </ul>
+
+  <a href="{% url 'accounts:my_page' %}">Back to My Page</a>
+{% endblock %}

@@ -1,0 +1,39 @@
+{% load static %}
+
+<!-- 全部のページのひながたになるhtmlファイル -->
+<!-- 基本的にヘッダー、フッターとbodyの中にそれぞれのページでcontentsをぶっこむためのスペースを用意 -->
+
+<!-- ヘッド要素 -->
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>{% block title %}{% endblock %}</title>
+    <link href="{% static 'C:\djangoprojects\moneyproject\moneycount\static\css\style.css' %}" rel="stylesheet">
+</head>
+
+<body>
+    <!-- ヘッダー -->
+    <header>
+        <div class="header-title">
+            <!-- タイトル表示 -->
+            <h1>{% block header_title %}Money Count{% endblock %}</h1>
+        </div>
+        <!-- どんなサイトなのかっていう説明 -->
+        <h2>Manage your money lending and borrowing.</h2>
+        <h4>Anyone can easily manage money owed and owed. Eliminate money problems such as owed and owing.</h4>
+    </header>
+
+    <!-- メインコンテンツをぶっこむ場所 -->
+    <div id="content">
+        {% block contents %}{% endblock %}
+    </div>
+
+    <!-- フッター -->
+    <footer>
+        <hr>
+        <p>&copy; MoneyCount hokahoka 2023</p>
+    </footer>
+</body>
+</html>

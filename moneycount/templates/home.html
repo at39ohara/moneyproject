@@ -1,0 +1,14 @@
+<!-- base.htmlのひな型を引っ張ってくる -->
+{% extends 'base.html' %}
+
+<!-- タイトルをぶっこむ -->
+{% block title %}
+    Mobey Count - Signin / Login
+{% endblock %}
+
+<!-- 一番最初のページ用のもの -->
+<!-- サインアップとログインを選べるページ -->
+{% block contents %}
+    <li><a href="{% url 'accounts:signup' %}" class="text-white">Sign Up Now</a></li>
+    <li><a href="{% url 'accounts:login' %}" class="text-white">Log in</a></li>
+{% endblock %}

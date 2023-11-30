@@ -5,16 +5,16 @@
 {% block title %}Transaction List{% endblock %}
 
 {% block contents %}
-  <h2>Transaction List</h2>
+  <h2>貸し借りのリスト</h2>
 
   <ul>
     {% for transaction in transactions %}
       <li>
         {{ transaction.description }} - {{ transaction.amount }} - {{ transaction.date }}
-        <a href="{% url 'accounts:transaction_confirm_delete' transaction.pk %}">Delete</a>
+        <a href="{% url 'accounts:transaction_confirm_delete' transaction.pk %}">削除</a>
       </li>
     {% endfor %}
   </ul>
 
-  <a href="{% url 'accounts:my_page' %}">Back to My Page</a>
+  <a href="{% url 'accounts:my_page' %}">マイページへ戻る</a>
 {% endblock %}

@@ -6,9 +6,14 @@
     Mobey Count - Signin / Login
 {% endblock %}
 
+{% load static %}
+
 <!-- 一番最初のページ用のもの -->
 <!-- サインアップとログインを選べるページ -->
 {% block contents %}
-    <li><a href="{% url 'accounts:signup' %}" class="text-white">Sign Up Now</a></li>
-    <li><a href="{% url 'accounts:login' %}" class="text-white">Log in</a></li>
+<link href="{% static 'css/style.css' %}" rel="stylesheet">
+<div class="first-buttons">
+    <li><a href="{% url 'accounts:signup' %}" class="text-white">サインアップ</a></li>
+    <li><a href="{% url 'accounts:login' %}" class="text-white">ログイン</a></li>
+</div>
 {% endblock %}

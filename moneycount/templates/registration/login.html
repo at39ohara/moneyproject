@@ -4,11 +4,11 @@
 {% load static %}
 
 {% block contents %}
-  <h2>Login</h2>
+  <h2>ログイン</h2>
   <form method="post" action="{% url 'accounts:login' %}">
     {% csrf_token %}
     {{ form.as_p }}
-    <button type="submit">Login</button>
+    <button type="submit">ログイン</button>
   </form>
-  <p>Don't have an account? <a href="{% url 'accounts:signup' %}">Register</a></p>
+  <p>アカウントをお持ちでないですか？<a href="{% url 'accounts:signup' %}">登録する</a></p>
 {% endblock %}

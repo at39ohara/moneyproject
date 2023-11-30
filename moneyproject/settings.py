@@ -125,7 +125,7 @@ USE_TZ = True
 # settings.py
 
 STATIC_URL = '/static/'
-STATICFILES_DIRS = [os.path.join(BASE_DIR, 'moneycount', 'static')]
+STATICFILES_DIRS = [os.path.join(BASE_DIR, 'accounts', 'moneycount', 'static')]
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
 

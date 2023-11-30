@@ -8,7 +8,7 @@
     <div class = "container">
         <div class = "row">
             <div class = "col offset-2">
-                <h3>sign up</h3>
+                <h3>サインアップ</h3>
                 <form method = "post">
                     {% csrf_token %}
                     {% for field in form %}
@@ -21,13 +21,13 @@
                         </p>
                     {% endfor %}
                     <p style="color: red">
-                        ※Please register your e-mail address, as it will be needed to reset your password.
+                        ※パスワードの再設定に必要となりますので、メールアドレスをご登録ください。
                     </p>
-                    <input type="submit" value="Sign up">
+                    <input type="submit" value="サインアップ">
                 </form>
                 <br>
                 <p><a href="{% url 'moneycount:home' %}">
-                    Stop registration and return to top page</a>
+                    登録を中止してトップページに戻る</a>
                 </p>
             </div>
         </div>

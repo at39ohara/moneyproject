@@ -10,25 +10,37 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <title>{% block title %}{% endblock %}</title>
-    <link href="{% static 'C:\djangoprojects\moneyproject\moneycount\static\css\style.css' %}" rel="stylesheet">
+    <link href="{% static 'css/style.css' %}" rel="stylesheet">
 </head>
 
 <body>
     <!-- ヘッダー -->
     <header>
-        <div class="header-title">
+        <div class="header">
             <!-- タイトル表示 -->
-            <h1>{% block header_title %}Money Count{% endblock %}</h1>
+            <h1>{% block header_title %}＄Money Count＄{% endblock %}</h1>
         </div>
-        <!-- どんなサイトなのかっていう説明 -->
-        <h2>Manage your money lending and borrowing.</h2>
-        <h4>Anyone can easily manage money owed and owed. Eliminate money problems such as owed and owing.</h4>
     </header>
 
-    <!-- メインコンテンツをぶっこむ場所 -->
-    <div id="content">
-        {% block contents %}{% endblock %}
+    <!-- 写真 -->
+    <div background = 'C:\djangoprojects\moneyproject\moneycount\static\img\ichimanen.img'>
+
     </div>
+    <!-- タイトル用 -->
+    <div class="title">
+        <h2>お金の貸し借りを管理しましょう</h2>
+        <h4>誰でも簡単にお金の貸し借りを管理できます。貸し借りなどのお金の問題を解消できます</h4>
+    </div>
+
+    <!-- 区切り -->
+    <div class="line">
+        <hr>
+    </div>
+
+    <!-- メインコンテンツをぶっこむ場所 -->
+    <main>
+        {% block contents %}{% endblock %}
+    </main>
 
     <!-- フッター -->
     <footer>

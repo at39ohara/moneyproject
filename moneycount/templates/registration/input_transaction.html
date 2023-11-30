@@ -5,14 +5,14 @@
 {% block title %}Input Transaction{% endblock %}
 
 {% block contents %}
-  <h2>Input Transaction</h2>
+  <h2>貸し借りを入力</h2>
 
   <form method="post">
     {% csrf_token %}
     {{ form.as_p }}
 
-    <button type="submit">Submit</button>
+    <button type="submit">決定</button>
   </form>
 
-  <a href="{% url 'accounts:my_page' %}">Back to My Page</a>
+  <a href="{% url 'accounts:my_page' %}">マイページへ戻る</a>
 {% endblock %}

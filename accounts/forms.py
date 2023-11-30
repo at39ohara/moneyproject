@@ -26,9 +26,11 @@ class TransactionForm(forms.ModelForm):
     transaction_type = forms.ChoiceField(choices=TRANSACTION_CHOICES, label='取引の種類')
     # 取引の相手の名前を入力するテキストフィールド
     counterparty_name = forms.CharField(max_length=100, label='相手の名前')
+    description = forms.CharField(label='説明', widget=forms.Textarea(attrs={'rows': 4}))
+    amount = forms.DecimalField(max_digits=10, decimal_places=2, label='金額')
 
     class Meta:
         # transactionモデルに基づいたフォームを作成する
         model = Transaction
-        # 取引の種類、名前、説明、金額を扱うように指定
+        # 取引の種類、名前、説明、金額を扱うように指定する
         fields = ['transaction_type', 'counterparty_name', 'description', 'amount']

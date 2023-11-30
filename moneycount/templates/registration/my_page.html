@@ -6,23 +6,21 @@
 
 {% block title %}My Page{% endblock %}
 
-<!-- <link href="{% static 'css/mypage_style.css' %}" rel="stylesheet"> -->
-
-
 {% block contents %}
 
-<link href="{% static 'css/mypage_style.css' %}" rel="stylesheet">
+<link href="{% static 'css/style.css' %}" rel="stylesheet">
 
-  <h2>Welcome to My Page</h2>
+  <h2 class="my_page_h2">ようこそ</h2>
 
   <!-- ボタン -->
-  <a href="{% url 'accounts:input_transaction' %}"><button>Entering Lending and Borrowing</button></a>
-  <a href="{% url 'accounts:transaction_list' %}"><button>Check your lending and borrowing.</button></a>
-  <a href="{% url 'moneycount:contact' %}"><button>Contact Us</button></a>
-
+  <div class = 'button'>
+    <a href="{% url 'accounts:input_transaction' %}"><button>貸し借りを入力</button></a>
+    <a href="{% url 'accounts:transaction_list' %}"><button>貸し借りを確認</button></a>
+    <a href="{% url 'moneycount:contact' %}"><button>お問い合わせ</button></a>
+  </div>
   <!-- ログアウトボタン -->
   <form method="post" action="{% url 'accounts:logout' %}">
     {% csrf_token %}
-    <button type="submit">Logout</button>
+    <button type="submit">ログアウト</button>
   </form>
 {% endblock %}

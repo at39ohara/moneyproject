@@ -5,11 +5,11 @@
 {% block title %}Confirm Deletion{% endblock %}
 
 {% block contents %}
-  <h2>Confirm Deletion</h2>
-  <p>Are you sure you want to delete the transaction "{{ object }}"?</p>
+  <h2>貸し借りの削除</h2>
+  <p>貸し借りをを削除してもよろしいですか？ "{{ object }}"?</p>
   <form method="post" action="{% url 'accounts:transaction_confirm_delete' pk=object.pk %}">
     {% csrf_token %}
-    <input type="submit" value="Confirm">
+    <input type="submit" value="決定">
   </form>
-  <a href="{% url 'accounts:transaction_list' %}">Cancel</a>
+  <a href="{% url 'accounts:transaction_list' %}">戻る</a>
 {% endblock %}

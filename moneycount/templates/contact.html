@@ -7,7 +7,6 @@
 {% block title %}Contact{% endblock %}
 
 <!-- コンタクトぺーじのためのコンテンツをぶっこむためのもの -->
-<!-- 教科書の引用 -->
 {% block contents %}
 <main class="mb-4">
     <div class="container px-4 px-lg-5">
@@ -25,13 +24,6 @@
                 {% endif %}
 
                 <div class="my-5">
-                    <!-- * * * * * * * * * * * * * * *-->
-                    <!-- * * SB Forms Contact Form * *-->
-                    <!-- * * * * * * * * * * * * * * *-->
-                    <!-- This form is pre-integrated with SB Forms.-->
-                    <!-- To make this form functional, sign up at-->
-                    <!-- https://startbootstrap.com/solution/contact-forms-->
-                    <!-- to get an API token!-->
                     <form method = 'post'>
                         {% csrf_token %}
                         {% for field in form %}
@@ -44,12 +36,12 @@
                             </div>
                         {% endfor %}
                         <br>
-                        <button type = 'submit' class = 'btn btn-primary' id = 'sendMessageButton'>Send</button>
+                        <button type = 'submit' class = 'btn btn-primary' id = 'sendMessageButton'>送信</button>
                     </form>
                 </div>
             </div>
         </div>
     </div>
 </main>
-<a href="{% url 'accounts:my_page' %}">Back to My Page</a>
+<a href="{% url 'accounts:my_page' %}">マイページへ戻る</a>
 {% endblock %}
